@@ -30,7 +30,7 @@ export default function HomeScreen() {
 
         <TouchableOpacity style={styles.box}>
          <AntDesign name="linechart" size={50} color="black" />
-          <Text style={styles.boxTitle}>AProgresso</Text>
+          <Text style={styles.boxTitle}>Progresso</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.box}>
@@ -47,7 +47,7 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'white,
     
   },
   header: {
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   box: {
     width: '45%',
     height: 150,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: 'light grey',
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
