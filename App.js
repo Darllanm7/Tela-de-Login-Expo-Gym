@@ -6,7 +6,9 @@ import { AntDesign } from '@expo/vector-icons';
 
 export default function HomeScreen() {
   return (
+    
     <View style={styles.container}>
+  
       <View style={styles.header}>
            <MaterialIcons name="fitness-center" size={60} color="black" />
       
@@ -14,24 +16,30 @@ export default function HomeScreen() {
           <Ionicons name="menu-outline" size={32} color="black" />
         </TouchableOpacity>
       </View>
+
       <View style={styles.content}>
         <TouchableOpacity style={styles.box}>
           <Ionicons name="barbell-outline" size={50} color="black" />
           <Text style={styles.boxTitle}>Treinos</Text>
-        </TouchableOpacity>
+          </TouchableOpacity>
+
         <TouchableOpacity style={styles.box}>
           <Ionicons name="nutrition-outline" size={50} color="black" />
           <Text style={styles.boxTitle}>Nutrição</Text>
         </TouchableOpacity>
+
         <TouchableOpacity style={styles.box}>
          <AntDesign name="linechart" size={50} color="black" />
           <Text style={styles.boxTitle}>AProgresso</Text>
         </TouchableOpacity>
+
         <TouchableOpacity style={styles.box}>
           <Ionicons name="person-outline" size={50} color="black" />
           <Text style={styles.boxTitle}>Perfil</Text>
         </TouchableOpacity>
+
       </View>
+
     </View>
   );
 }
@@ -40,6 +48,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    
   },
   header: {
     flexDirection: 'row',
@@ -50,10 +59,12 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
     marginTop: 20,
+    
   },
   logo: {
     width: 100,
     height: 50,
+    
   },
   content: {
     flex: 1,
@@ -61,6 +72,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     padding: 20,
+    
   },
   box: {
     width: '45%',
@@ -70,10 +82,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginVertical: 10,
-  },
+    },
+  
   boxTitle: {
     fontSize: 20,
     fontWeight: 'bold',
     marginTop: 10,
+    
   },
 });
