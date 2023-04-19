@@ -1,45 +1,36 @@
-import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons'; 
+import { MaterialIcons } from '@expo/vector-icons'; 
 
-export default function HomeScreen() {
-  return (
+export default function LoginScreen() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
     
+  };
+
+  return (
     <View style={styles.container}>
-  
-      <View style={styles.header}>
-           <MaterialIcons name="fitness-center" size={60} color="black" />
-      
-        <TouchableOpacity>
-          <Ionicons name="menu-outline" size={32} color="black" />
-        </TouchableOpacity>
-      </View>
+      <MaterialIcons name="fitness-center" size={120} color="black" />
+      <Text style={styles.title}>Bem-vindo ao Expo-Gym</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="E-mail"
+        onChangeText={(text) => setEmail(text)}
+        value={email}
+      />
 
-      <View style={styles.content}>
-        <TouchableOpacity style={styles.box}>
-          <Ionicons name="barbell-outline" size={50} color="black" />
-          <Text style={styles.boxTitle}>Treinos</Text>
-          </TouchableOpacity>
+      <TextInput
+        style={styles.input}
+        placeholder="Senha"
+        secureTextEntry={true}
+        onChangeText={(text) => setPassword(text)}
+        value={password}
+      />
 
-        <TouchableOpacity style={styles.box}>
-          <Ionicons name="nutrition-outline" size={50} color="black" />
-          <Text style={styles.boxTitle}>Nutrição</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.box}>
-         <AntDesign name="linechart" size={50} color="black" />
-          <Text style={styles.boxTitle}>Progresso</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.box}>
-          <Ionicons name="person-outline" size={50} color="black" />
-          <Text style={styles.boxTitle}>Perfil</Text>
-        </TouchableOpacity>
-
-      </View>
-
+      <Button title="Entrar" onPress={handleLogin} />
     </View>
   );
 }
@@ -47,47 +38,24 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white,
-    
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-    marginTop: 20,
-    
-  },
-  logo: {
-    width: 100,
-    height: 50,
-    
-  },
-  content: {
-    flex: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
-    padding: 20,
-    
-  },
-  box: {
-    width: '45%',
-    height: 150,
-    backgroundColor: 'light grey',
-    borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: 10,
-    },
-  
-  boxTitle: {
-    fontSize: 20,
+  },
+
+  title: {
+    fontSize: 24,
     fontWeight: 'bold',
-    marginTop: 10,
-    
+    marginVertical: 20,
+  },
+
+  input: {
+    width: '80%',
+    height: 50,
+    borderColor: 'gray',
+    borderWidth: 1,
+    borderRadius: 10,
+    paddingHorizontal: 10,
+    marginVertical: 10,
+
   },
 });
